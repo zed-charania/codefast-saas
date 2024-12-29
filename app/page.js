@@ -1,5 +1,8 @@
 import ButtonLogin from "@/Components/ButtonLogin";
 import FAQ from "@/Components/FAQ";
+import Image from "next/image";
+import ProductDemo from "./ProductDemo.jpeg";
+
 export default function Home() {
   const isLoggedIn = true;
   const name = "Zed";
@@ -7,7 +10,7 @@ export default function Home() {
     <main>
       {/* Header */}
       <section className="bg-base-200">
-        <div className="flex justify-between items-center p-4 px-8 py-2 max-w-3xl mx-auto">
+        <div className="flex justify-between items-center p-4 px-8 py-2 max-w-5xl mx-auto">
           <div className="font-bold">CodeFast</div>
           <div className="space-x-4 max-md:hidden">
             <a className="link link-hover" href="#pricing">
@@ -24,16 +27,23 @@ export default function Home() {
       </section>
 
       {/* Hero */}
-      <section className="px-8 text-center py-32 max-w-3xl mx-auto">
-        <h1 className="text-4xl font-extrabold mb-6 lg:text-5xl">
-          Collect customer feedback to build better products
-        </h1>
-        <div className="opacity-90 mb-10">
-          Create a feedback board in minutes, prioritize features, and build
-          products your customers will love.
-        </div>
+      <section className="px-8 text-center lg:text-left py-32 max-w-5xl mx-auto flex flex-col lg:flex-row gap-14 items-center lg:items-start">
+        <Image
+          src={ProductDemo}
+          alt="Product Demo"
+          className="w-96 rounded-xl"
+        />
+        <div>
+          <h1 className="text-4xl font-extrabold mb-6 lg:text-5xl">
+            Collect customer feedback to build better products
+          </h1>
+          <div className="opacity-90 mb-10">
+            Create a feedback board in minutes, prioritize features, and build
+            products your customers will love.
+          </div>
 
-        <ButtonLogin isLoggedIn={isLoggedIn} />
+          <ButtonLogin isLoggedIn={isLoggedIn} />
+        </div>
       </section>
       {/* Pricing */}
       <section className="bg-base-200 py-32" id="pricing">
